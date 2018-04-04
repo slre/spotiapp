@@ -1,0 +1,62 @@
+
+<div class="container top30">
+  <div class="row">
+    <div class="col-md-3">
+      <img [src]="artist.images | nophoto" class="img-thumbnail circular-image">
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-9">
+          <h1>{{artist.name}}</h1>
+          <a  [href]="artist.external_urls?.spotify" target="_blank" class="btn btn-outline-success">Play on Spotify</a>
+          <a [routerLink]="['/search']" class="btn btn-outline-danger">Return</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <hr>
+  <h1>Top Tracks</h1>
+  <!-- <div class="row track-row" *ngFor="let track of topTracks" >
+    <div class="col-md-3">
+      <img [src]="track.album.images[2].url" class="mx-auto d-block">
+    </div>
+    <div class="col-md-9 text-center track-text">
+      {{track.name}}
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Picture</th>
+      <th scope="col">Name</th>
+      <th scope="col">Popularity</th>
+      <th scope="col">Play</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let track of topTracks">
+
+    <td>{{track.track_number}}</td>
+    <td><img [src]="track.album.images[2].url" class="img-30"></td>
+    <td>{{track.name}}</td>
+    <td>{{track.popularity}}</td>
+    <td>
+      <!-- <audio controls>
+        <source [src]="track.preview_url">
+
+      </audio> -->
+      <iframe [src]="track.uri | securedom:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+    </td>
+    </tr>
+
+  </tbody>
+</table>
+    </div>
+
+  </div>
+</div>

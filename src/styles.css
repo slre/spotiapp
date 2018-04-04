@@ -72,3 +72,27 @@ hr{
 .top30{
   margin-top: 30px;
 }
+
+.track-row{
+  padding: 10px;
+}
+.img-center {
+  margin:0 auto;
+}
+
+.track-row{
+  cursor: pointer;
+}
+.track-text{
+  line-height: 64px;
+}
+.track-row:hover{
+  background-color: #636568;
+  height:auto;
+}
+.circular-image{
+  border-radius: 100%;
+}
+.img-30{
+  width: 30px;
+}

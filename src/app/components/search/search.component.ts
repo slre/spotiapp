@@ -15,10 +15,8 @@ export class SearchComponent implements OnInit {
     if(this.term.length==0){
       return;
     }
-    console.log(this.term);
 
-    this._spotify.getArtist(this.term).subscribe(data=>{
-      console.log(data);
+    this._spotify.getArtists(this.term).subscribe(data=>{
     });
   }
   ngOnInit() {
